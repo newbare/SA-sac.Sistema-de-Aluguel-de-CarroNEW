@@ -25,6 +25,7 @@ public class Cliente {
 	private String cidade;
 	private String estado;
 	
+	
 	public long getId() {
 		return id;
 	}
@@ -95,7 +96,7 @@ public class Cliente {
 	public String toString(){
 		return "\nId: " + id + "\nNome: " + nome + "\nSenha: " + senha 
 				+ "\nCPF: " + "\nTelefone: " + "\nE-mail: " 
-				+ "\nData de nascimento: " + dataNascimento + "\nNumero da Habilitação: " + numeroHabilitacao 
+				+ "\nData de nascimento: " + dataNascimento + "\nNumero da Habilitação: " + numeroHabilitacao     
 				+ "\nCidade: " + cidade + "\nEstado: " + estado;
 	}
 	
