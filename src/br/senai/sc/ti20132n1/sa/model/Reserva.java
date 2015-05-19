@@ -57,8 +57,8 @@ public class Reserva {
 	
 	@Override
 	public String toString(){
-		return "\nID: " + id + "\nLocal de Retirada: " + "\nLocal de Devolução: " + localDevolucao
-				+ "\nData de Retirada: " + dataDeRetirada + "\nData de Devolução: " + dataDeDevolucao
+		return "\nID: " + id + "\nLocal de Retirada: " + "\nLocal de Devolucao: " + localDevolucao
+				+ "\nData de Retirada: " + dataDeRetirada + "\nData de Devolucao: " + dataDeDevolucao
 				+ "\nValor Total: " + valortotal;
 	}
 	

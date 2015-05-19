@@ -21,10 +21,6 @@ public class Cliente {
 	private String email;
 	private Date dataNascimento;
 	private int numeroHabilitacao;
-	private int numeroRegistro;
-	private String nacionalidade;
-	private String estadoEmissor;
-	private Date validade;
 	private String endereco;
 	private String cidade;
 	private String estado;
@@ -77,30 +73,6 @@ public class Cliente {
 	public void setNumeroHabilitacao(int numeroHabilitacao) {
 		this.numeroHabilitacao = numeroHabilitacao;
 	}
-	public int getNumeroRegistro() {
-		return numeroRegistro;
-	}
-	public void setNumeroRegistro(int numeroRegistro) {
-		this.numeroRegistro = numeroRegistro;
-	}
-	public String getNacionalidade() {
-		return nacionalidade;
-	}
-	public void setNacionalidade(String nacionalidade) {
-		this.nacionalidade = nacionalidade;
-	}
-	public String getEstadoEmissor() {
-		return estadoEmissor;
-	}
-	public void setEstadoEmissor(String estadoEmissor) {
-		this.estadoEmissor = estadoEmissor;
-	}
-	public Date getValidade() {
-		return validade;
-	}
-	public void setValidade(Date validade) {
-		this.validade = validade;
-	}
 	public String getEndereco() {
 		return endereco;
 	}
@@ -123,9 +95,7 @@ public class Cliente {
 	public String toString(){
 		return "\nId: " + id + "\nNome: " + nome + "\nSenha: " + senha 
 				+ "\nCPF: " + "\nTelefone: " + "\nE-mail: " 
-				+ "\nData de nascimento: " + dataNascimento + "\nNumero da Habilitação: " + numeroHabilitacao 
-				+ "\nNumero do Registro: " + numeroRegistro + "\nNacionalidade: " + nacionalidade
-				+ "\nEstado Emissor: " + estadoEmissor + "\n Validade: " + validade + "\nEndereço: " + endereco 
+				+ "\nData de nascimento: " + dataNascimento + "\nNumero da Habilitação: " + numeroHabilitacao  
 				+ "\nCidade: " + cidade + "\nEstado: " + estado;
 	}
 	
