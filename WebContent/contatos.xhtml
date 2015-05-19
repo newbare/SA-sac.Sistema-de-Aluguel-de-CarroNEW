@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/templates/padrao.xhtml">
+	<ui:define name="header">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<h1>ENVIE-NOS UMA MENSAGEM</h1>
+					<p>
+						<h5>A nossa equipe de serviço está empenhada em responder a
+							todas suas perguntas e a qualquer necessidade que possa ter.
+							Gostaríamos muito de ouvir você! Por favor, preencha o formulário
+							abaixo para que possamos ajuda-lo.</h5>
+					</p>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<h2>Fale conosco</h2>
+				<div class="col-md-8">
+					<h:form>
+						<fieldset>
+							<h:outputLabel value="Nome " />
+							<h:inputText styleClass="form-control" value="#{contatoMB.nome}" />
+							<br />
+							<h:outputLabel value="E-mail " />
+							<h:inputText styleClass="form-control" value="#{contatoMB.email}" />
+							<div>
+								<h:commandButton action="#{contatoMB.enviar()}" styleClass="btn btn-succe" value="Enviar" />
+								<button class="btn btn-default" type="reset">Restaurar</button>
+							</div>
+						</fieldset>
+					</h:form>
+				</div>
+
+
+			</div>
+
+		</div>
+
+	</ui:define>
+
+</ui:composition>
+</html>
