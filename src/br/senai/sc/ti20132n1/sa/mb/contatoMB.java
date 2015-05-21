@@ -6,10 +6,38 @@ import javax.faces.bean.ManagedBean;
 public class contatoMB {
 	
 	private String nome;
+	private String telefone;
 	private String email;
+	private String menssagem;
 	
 	
 	
+	
+	
+	public String getTelefone() {
+		return telefone;
+	}
+
+
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+
+
+	public String getMenssagem() {
+		return menssagem;
+	}
+
+
+
+	public void setMenssagem(String menssagem) {
+		this.menssagem = menssagem;
+	}
+
+
+
 	public String getNome() {
 		return nome;
 	}
