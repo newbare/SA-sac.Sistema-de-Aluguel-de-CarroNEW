@@ -11,7 +11,7 @@ import br.senai.sc.ti20132n1.sa.model.Administrador;
 import br.senai.sc.ti20132n1.sa.model.Cliente;
 import br.senai.sc.ti20132n1.sa.model.Reserva;
 
-public class AdministradorDao {
+public class AdministradorDao extends Dao{
 
 	private EntityManagerFactory entityManagerFactory;
 	private EntityManager entityManager;
@@ -22,12 +22,11 @@ public class AdministradorDao {
 		entityManager = entityManagerFactory.createEntityManager();
 	}
 
-	public void atualizar(Administrador administrador) {
-		entityManager.getTransaction().begin();
-		entityManager.merge(administrador);
-		entityManager.getTransaction().commit();
+	
+	public void salvar(Administrador administrador) {
+		getEntityManager().merge(administrador);
 	}
-
+	
 	public void excluir(Long id) {
 		entityManager.getTransaction().begin();
 		Administrador administrador = entityManager.getReference(
@@ -43,11 +42,7 @@ public class AdministradorDao {
 		return administrador;
 	}
 	
-	public void inserir(Administrador administrador) {
-		entityManager.getTransaction().begin();
-		entityManager.persist(administrador);
-		entityManager.getTransaction().commit();
-	}
+	
 	
 	public List<Administrador> listar() {
 		entityManager.getTransaction().begin();

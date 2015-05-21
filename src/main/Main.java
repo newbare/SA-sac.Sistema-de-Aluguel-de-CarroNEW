@@ -21,12 +21,10 @@ public class Main {
 		carro.setQuantpassageiros(4);
 		carro.setQuantportas(2);
 		carro.setValorcarro(458880D);
-		carrodao.inserir(carro);
 		carro = carrodao.buscarPorId(3L);
 		carrodao.excluir(carro.getId());
 		Carro carro2 = carrodao.buscarPorId(4L);
 		carro2.setDescricao("blablablabla");
-		carrodao.atualizar(carro2);
 		List<Carro> carros = carrodao.listar();
 		carrodao.fechar();
 		System.out.println(carros);

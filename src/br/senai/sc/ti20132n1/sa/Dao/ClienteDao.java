@@ -7,10 +7,9 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-import br.senai.sc.ti20132n1.sa.model.Carro;
 import br.senai.sc.ti20132n1.sa.model.Cliente;
 
-public class ClienteDao {
+public class ClienteDao extends Dao{
 
 	private EntityManagerFactory entityManagerFactory;
 	private EntityManager entityManager;
@@ -21,11 +20,10 @@ public class ClienteDao {
 		entityManager = entityManagerFactory.createEntityManager();
 	}
 
-	public void atualizar(Cliente cliente) {
-		entityManager.getTransaction().begin();
-		entityManager.merge(cliente);
-		entityManager.getTransaction().commit();
+	public void salvar(Cliente cliente) {
+		getEntityManager().merge(cliente);
 	}
+	
 
 	public void excluir(Long id) {
 		entityManager.getTransaction().begin();
@@ -41,11 +39,7 @@ public class ClienteDao {
 		return cliente;
 	}
 
-	public void inserir(Cliente cliente) {
-		entityManager.getTransaction().begin();
-		entityManager.persist(cliente);
-		entityManager.getTransaction().commit();
-	}
+	
 
 	public List<Cliente> listar() {
 		entityManager.getTransaction().begin();

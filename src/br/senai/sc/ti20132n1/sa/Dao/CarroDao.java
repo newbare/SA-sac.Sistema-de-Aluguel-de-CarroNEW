@@ -8,11 +8,13 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 
+
+
 import br.senai.sc.ti20132n1.sa.model.Carro;
 
 
 
-public class CarroDao {
+public class CarroDao extends Dao {
 	private EntityManagerFactory entityManagerFactory;
 	private EntityManager entityManager;
 	
@@ -21,11 +23,10 @@ public class CarroDao {
 		entityManager = entityManagerFactory.createEntityManager();
 	}
 	
-	public  void atualizar(Carro carro) {
-		entityManager.getTransaction().begin();
-		entityManager.merge(carro);
-		entityManager.getTransaction().commit();
+	public void salvar(Carro carro) {
+		getEntityManager().merge(carro);
 	}
+	
 
 	public void excluir(Long id) {
 		entityManager.getTransaction().begin();
@@ -41,11 +42,7 @@ public class CarroDao {
 		return carro;
 	}
 
-	public void inserir(Carro carro) {
-		entityManager.getTransaction().begin();
-		entityManager.persist(carro);
-		entityManager.getTransaction().commit();
-	}
+	
 	public List<Carro> listar(){
 		entityManager.getTransaction().begin();
 		Query query = entityManager.createQuery("From Carro", Carro.class);
