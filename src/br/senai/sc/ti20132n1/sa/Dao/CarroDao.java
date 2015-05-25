@@ -23,6 +23,7 @@ public class CarroDao extends Dao {
 		entityManager = entityManagerFactory.createEntityManager();
 	}
 	
+	
 	public void salvar(Carro carro) {
 		getEntityManager().merge(carro);
 	}
