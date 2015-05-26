@@ -3,14 +3,14 @@
 	xmlns:h="http://java.sun.com/jsf/html">
 
 	
-		<div id='cssmenu'>
-			<ul>
-				<li class='active'><a  href='index.xhtml'>Home</a></li>
-				<li class='active'><a  href='quemsomos.xhtml'>Quem Somos Nós</a></li>
-				<li class='active'><a  href='contatos.xhtml'>Contatos</a></li>
-				<li class='active'><a  href='localizacao.xhtml'>Localização</a></li>
-			</ul>
-		</div>
-		
+			<div class="collapse navbar-collapse" id="cssmenu">
+				<ul class="nav navbar-nav">
+					<li><h:link outcome="/index" value="Home" /></li>
+					<li><h:link outcome="/quemsomos" value="Quem Somos Nós" /></li>
+					<li><h:link outcome="/contatos" value="Contatos" /></li>
+					<li><h:link outcome="/localizacao" value="Localizacao" /></li>
+				</ul>
+			</div>
 	
+
 </ui:composition>
