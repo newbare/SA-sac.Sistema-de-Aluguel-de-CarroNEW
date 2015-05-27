@@ -7,10 +7,9 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-import br.senai.sc.ti20132n1.sa.model.Cliente;
 import br.senai.sc.ti20132n1.sa.model.Reserva;
 
-public class ReservaDao {
+public class ReservaDao extends Dao{
 	
 	private EntityManagerFactory entityManagerFactory;
 	private EntityManager entityManager;
@@ -20,40 +19,26 @@ public class ReservaDao {
 		entityManager = entityManagerFactory.createEntityManager();
 	}
 	
-	public void atualizar(Reserva reserva) {
-		entityManager.getTransaction().begin();
-		entityManager.merge(reserva);
-		entityManager.getTransaction().commit();
+	public void salvar(Reserva reserva) {
+		getEntityManager().merge(reserva);
 	}
 	
 	public void excluir(Long id) {
-		entityManager.getTransaction().begin();
-		Reserva reserva = entityManager.getReference(Reserva.class, id);
-		entityManager.remove(reserva);
-		entityManager.getTransaction().commit();
+		Reserva reserva = getEntityManager().getReference(Reserva.class, id);
+		getEntityManager().remove(reserva);
 	}
 	
 	public Reserva buscarPorId(Long id) {
-		entityManager.getTransaction().begin();
-        Reserva reserva = entityManager.getReference(Reserva.class, id);
-		entityManager.getTransaction().commit();
-		return reserva;
+		return getEntityManager().find(Reserva.class, id);
 	}
 	
-	public void inserir(Reserva reserva) {
-		entityManager.getTransaction().begin();
-		entityManager.persist(reserva);
-		entityManager.getTransaction().commit();
+	
+	@SuppressWarnings("unchecked")
+	public List<Reserva> listarTodos() {
+		Query query = getEntityManager().createQuery("From Reserva",Reserva.class);
+		return query.getResultList();
 	}
 	
-	public List<Reserva> listar() {
-		entityManager.getTransaction().begin();
-		Query query = entityManager.createQuery("From Cliente", Cliente.class);
-		List<Reserva> reserva = query.getResultList();
-		entityManager.getTransaction().commit();
-		return reserva;
-
-	}
 	
 	public void fechar(){
 		entityManager.close();
