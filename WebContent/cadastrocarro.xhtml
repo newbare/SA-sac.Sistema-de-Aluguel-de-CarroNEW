@@ -12,18 +12,58 @@
 
 	</ui:define>
 	<ui:define name="content">
-		
-		<div class="panel panel-primary">
-			
-		</div>
-		<div class="panel panel-success">...</div>
-		<div class="panel panel-info">...</div>
-		<div class="panel panel-warning">...</div>
-		<div class="panel panel-danger">...</div>
+		<div class="col-md-4">
+			<div class="panel panel-primary">
+				<!-- Single button -->
+				<div class="btn-group">
+					<button type="button" class="btn btn-default dropdown-toggle"
+						data-toggle="dropdown" aria-expanded="false">
+						Action <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Another action</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+					</ul>
+				</div>
 
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<div class="panel panel-primary">
+
+				<div class="btn-group-vertical" role="group" aria-label="...">
+					<div class="btn-group" role="group" aria-label="...">
+						<button type="button" class="btn btn-default">1</button>
+						<button type="button" class="btn btn-default">2</button>
+
+						<div class="btn-group" role="group">
+							<button type="button" class="btn btn-default dropdown-toggle"
+								data-toggle="dropdown" aria-expanded="false">
+								Dropdown <span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="#">Dropdown link</a></li>
+								<li><a href="#">Dropdown link</a></li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="col-md-2">
+			<div class="panel panel-primary">
+
+				<h1>Nes</h1>
+			</div>
+		</div>
 	</ui:define>
 	<ui:define name="footer">
-	    Add your footer here or delete to use the default
+
 	</ui:define>
 </ui:composition>
 </html>

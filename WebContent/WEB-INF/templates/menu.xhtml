@@ -2,15 +2,17 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html">
 
-	
+
+	<nav class= "navbar navbar">	
 		<div id='cssmenu'>
 			<ul>
-				<li class='active'><a  href='index.xhtml'>Home</a></li>
-				<li class='active'><a  href='quemsomos.xhtml'>Quem Somos Nós</a></li>
-				<li class='active'><a  href='contatos.xhtml'>Contatos</a></li>
-				<li class='active'><a  href='localizacao.xhtml'>Localização</a></li>
+				<li class='active'><h:link outcome="/index" value="Home" /></li>
+				<li class='active'><h:link outcome="/quemsomos" value="Quem somos nos" /></li>
+				<li class='active'><h:link outcome="/contatos" value="Contatos" /></li>
+				<li class='active'><h:link outcome="/localizacao" value="Localização" /></li>
 			</ul>
 		</div>
-		
+		</nav>
 	
+
 </ui:composition>
