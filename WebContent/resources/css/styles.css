@@ -33,7 +33,7 @@ font-family: Raleway, sans-serif;
   line-height: 1;
 }
 #cssmenu ul {
-  background: #FF5151;
+  background: #230BB6;;
 }
 #cssmenu > ul > li {
   float: left;
@@ -96,7 +96,7 @@ font-family: Raleway, sans-serif;
 #cssmenu > ul > li.active > a:after,
 #cssmenu > ul > li:hover > a:after,
 #cssmenu > ul > li > a:hover:after {
-  background: #C00000;
+  background: #0008A6;
 }
 
 element.style {
