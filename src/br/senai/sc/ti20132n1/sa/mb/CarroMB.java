@@ -2,8 +2,8 @@ package br.senai.sc.ti20132n1.sa.mb;
 
 import java.util.List;
 
-import javax.annotation.ManagedBean;
 import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
 
 import br.senai.sc.ti20132n1.sa.Dao.CarroDao;
 import br.senai.sc.ti20132n1.sa.model.Carro;
@@ -38,6 +38,27 @@ public class CarroMB {
 		return carros;
 	}
 	
+	public void setCarros(List<Carro> carros){
+		this.carros = carros;
+	}
+	
+	public String salvar(){
+		carroDao.salvar(carro);
+		return "listacarro?faces-redirect=true";
+	}
+	
+	public String excluir(String idParam){
+		Long id = Long.valueOf(idParam);
+		carroDao.excluir(id);
+		return "formcarro";
+		
+	}
+	
+	public String editar(String idParam){
+		Long id = Long.valueOf(idParam);
+		carroDao.buscarPorId(id);
+		return "formcarro";
+		}
 	
 	
 	

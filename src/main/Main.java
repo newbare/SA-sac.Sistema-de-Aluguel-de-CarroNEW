@@ -25,9 +25,8 @@ public class Main {
 		carrodao.excluir(carro.getId());
 		Carro carro2 = carrodao.buscarPorId(4L);
 		carro2.setDescricao("blablablabla");
-		List<Carro> carros = carrodao.listar();
 		carrodao.fechar();
-		System.out.println(carros);
+		
 		
 	}
 	
