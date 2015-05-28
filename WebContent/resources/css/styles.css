@@ -28,12 +28,12 @@ font-family: Raleway, sans-serif;
 }
 #cssmenu {
   width: auto;
-  border-bottom: 3px solid #C00000;
+  border-bottom: 3px solid #000000;
   font-family: Raleway, sans-serif;
   line-height: 1;
 }
 #cssmenu ul {
-  background: #000000;
+  background: #FF5151;
 }
 #cssmenu > ul > li {
   float: left;

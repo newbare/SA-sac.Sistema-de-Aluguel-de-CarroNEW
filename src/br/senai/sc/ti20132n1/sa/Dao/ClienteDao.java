@@ -9,6 +9,7 @@ import javax.persistence.Query;
 
 import br.senai.sc.ti20132n1.sa.model.Cliente;
 
+
 public class ClienteDao extends Dao{
 
 	private EntityManagerFactory entityManagerFactory;
@@ -26,28 +27,20 @@ public class ClienteDao extends Dao{
 	
 
 	public void excluir(Long id) {
-		entityManager.getTransaction().begin();
-		Cliente cliente = entityManager.getReference(Cliente.class, id);
-		entityManager.remove(cliente);
-		entityManager.getTransaction().commit();
+		Cliente cliente= getEntityManager().getReference(Cliente.class, id);
+		getEntityManager().remove(cliente);
 	}
 
 	public Cliente buscarPorId(Long id) {
-		entityManager.getTransaction().begin();
-		Cliente cliente = entityManager.getReference(Cliente.class, id);
-		entityManager.getTransaction().commit();
-		return cliente;
+		return getEntityManager().find(Cliente.class, id);
 	}
 
 	
 
-	public List<Cliente> listar() {
-		entityManager.getTransaction().begin();
-		Query query = entityManager.createQuery("From Cliente", Cliente.class);
-		List<Cliente> cliente = query.getResultList();
-		entityManager.getTransaction().commit();
-		return cliente;
-
+	@SuppressWarnings("unchecked")
+	public List<Cliente> listarTodos() {
+		Query query = getEntityManager().createQuery("From Cliente",Cliente.class);
+		return query.getResultList();
 	}
 	
 	public void fechar(){

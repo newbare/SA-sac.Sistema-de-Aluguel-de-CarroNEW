@@ -8,8 +8,7 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import br.senai.sc.ti20132n1.sa.model.Administrador;
-import br.senai.sc.ti20132n1.sa.model.Cliente;
-import br.senai.sc.ti20132n1.sa.model.Reserva;
+
 
 public class AdministradorDao extends Dao{
 
@@ -28,29 +27,20 @@ public class AdministradorDao extends Dao{
 	}
 	
 	public void excluir(Long id) {
-		entityManager.getTransaction().begin();
-		Administrador administrador = entityManager.getReference(
-				Administrador.class, id);
-		entityManager.remove(administrador);
-		entityManager.getTransaction().commit();
+		Administrador administrador = getEntityManager().getReference(Administrador.class, id);
+		getEntityManager().remove(administrador);
 	}
 	
 	public Administrador buscarPorId(Long id) {
-		entityManager.getTransaction().begin();
-		Administrador administrador = entityManager.getReference(Administrador.class, id);
-		entityManager.getTransaction().commit();
-		return administrador;
+		return getEntityManager().find(Administrador.class, id);
 	}
 	
 	
 	
-	public List<Administrador> listar() {
-		entityManager.getTransaction().begin();
-		Query query = entityManager.createQuery("From Administrador", Administrador.class);
-		List<Administrador> administrador = query.getResultList();
-		entityManager.getTransaction().commit();
-		return administrador;
-
+	@SuppressWarnings("unchecked")
+	public List<Administrador> listarTodos() {
+		Query query = getEntityManager().createQuery("From Administrador",Administrador.class);
+		return query.getResultList();
 	}
 	
 	public void fechar(){
