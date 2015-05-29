@@ -13,14 +13,6 @@ import br.senai.sc.ti20132n1.sa.model.Carro;
 
 
 public class CarroDao extends Dao {
-	private EntityManagerFactory entityManagerFactory;
-	private EntityManager entityManager;
-	
-	public CarroDao(){
-		entityManagerFactory = Persistence.createEntityManagerFactory("sacjpadb");		
-		entityManager = entityManagerFactory.createEntityManager();
-	}
-	
 	
 	public void salvar(Carro carro) {
 		getEntityManager().merge(carro);
@@ -44,10 +36,6 @@ public class CarroDao extends Dao {
 	}
 	
 	
-	public void fechar(){
-		entityManager.close();
-		
-		entityManagerFactory.close();
-	}
+	
 	
 }

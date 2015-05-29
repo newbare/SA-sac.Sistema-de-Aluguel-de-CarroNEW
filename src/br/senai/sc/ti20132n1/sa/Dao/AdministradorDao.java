@@ -12,14 +12,6 @@ import br.senai.sc.ti20132n1.sa.model.Administrador;
 
 public class AdministradorDao extends Dao{
 
-	private EntityManagerFactory entityManagerFactory;
-	private EntityManager entityManager;
-
-	public AdministradorDao() {
-		entityManagerFactory = Persistence
-				.createEntityManagerFactory("sacjpadb");
-		entityManager = entityManagerFactory.createEntityManager();
-	}
 
 	
 	public void salvar(Administrador administrador) {
@@ -43,9 +35,5 @@ public class AdministradorDao extends Dao{
 		return query.getResultList();
 	}
 	
-	public void fechar(){
-		entityManager.close();
-		
-		entityManagerFactory.close();
-	}
+	
 }

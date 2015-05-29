@@ -8,65 +8,56 @@ import javax.faces.bean.ManagedBean;
 import br.senai.sc.ti20132n1.sa.Dao.CarroDao;
 import br.senai.sc.ti20132n1.sa.model.Carro;
 
-
-
 @ManagedBean
 public class CarroMB {
-	
+
 	private Carro carro;
 	private List<Carro> carros;
 	private CarroDao carroDao;
-	
+
 	@PostConstruct
 	public void initMB() {
 		this.carro = new Carro();
 		carroDao = new CarroDao();
 	}
-	
-	public Carro getCarro(){
+
+	public Carro getCarro() {
 		return carro;
 	}
-	
-	public Carro setCarro(){
-		return carro;
+
+	public void setCarro(Carro carro) {
+		this.carro = carro;
 	}
-	
-	public List<Carro> getCarros(){
-		if(carros == null){
+
+	public List<Carro> getCarros() {
+		if (carros == null) {
 			carros = carroDao.listarTodos();
 		}
 		return carros;
 	}
-	
 
-	public void setCarros(List<Carro> carros){
+	public void setCarro(List<Carro> carros) {
 		this.carros = carros;
 	}
-	
-	public String salvar(){
-		carroDao.salvar(carro);
-		return "listacarro?faces-redirect=true";
+
+	public String salvar() {
+		CarroDao dao = new CarroDao();
+		dao.salvar(carro);
+		carro = new Carro();
+		return "";
 	}
-	
-	public String excluir(String idParam){
+
+	public String excluir(String idParam) {
 		Long id = Long.valueOf(idParam);
 		carroDao.excluir(id);
-		return "formcarro";
-		
+		carros = null;
+		return "";
 	}
-	
-	public String editar(String idParam){
-		Long id = Long.valueOf(idParam);
-		carroDao.buscarPorId(id);
-		return "formcarro";
-		}
 
-	
-	
-	
-	
-	
-	
-	
+	public String editar(String idParam) {
+		Long id = Long.valueOf(idParam);
+		carro = carroDao.buscarPorId(id);
+		return "formcarro";
+	}
 
 }
