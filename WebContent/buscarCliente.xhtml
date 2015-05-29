@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/templates/padrao.xhtml">
+	<ui:define name="header">
+		<h3>
+			Buscar<span class="rótulo rótulo-padrão">Cliente</span>
+		</h3>
+	</ui:define>
+	<ui:define name="content">
+		<div class="col-md-3">
+			<ul class="nav nav-pills nav-stacked">
+				<li role="presentation" class="dropdown"><a
+					class="dropdown-toggle" data-toggle="dropdown" href="#"
+					role="button" aria-expanded="false"> Carro <span class="caret"></span>
+				</a>
+					<ul class="dropdown-menu" role="menu">
+						<li role="presentation"><a role="menuitem" tabindex="-1"
+							href="cadastrocarro.xhtml">Cadastra</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1"
+							href="#">Busca</a></li>
+					</ul></li>
+				<li role="presentation" class="dropdown"><a
+					class="dropdown-toggle" data-toggle="dropdown" href="#"
+					role="button" aria-expanded="false"> Cliente <span
+						class="caret"></span>
+				</a>
+					<ul class="dropdown-menu" role="menu">
+						<li role="presentation"><a role="menuitem" tabindex="-1"
+							href="cadastrocarro.xhtml">Cadastra</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1"
+							href="#">Busca</a></li>
+					</ul></li>
+				<li role="presentation" class="dropdown"><a
+					class="dropdown-toggle" data-toggle="dropdown" href="#"
+					role="button" aria-expanded="false"> Reserva <span
+						class="caret"></span>
+				</a>
+					<ul class="dropdown-menu" role="menu">
+						<li role="presentation"><a role="menuitem" tabindex="-1"
+							href="cadastrocarro.xhtml">Cadastra</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1"
+							href="#">Busca</a></li>
+					</ul></li>
+			</ul>
+		</div>
+		<div class="col-md-9">
+			<div class="content">
+				<div class="col-md-10">
+					<form>
+						<div class="input-group">
+							<span class="input-group-addon  glyphicon glyphicon-search"  id="sizing-addon2"></span>
+							<h:inputText styleClass="form-control"
+								value="" />
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+	<ui:define name="footer">
+	    
+	</ui:define>
+</ui:composition>
+</html>
