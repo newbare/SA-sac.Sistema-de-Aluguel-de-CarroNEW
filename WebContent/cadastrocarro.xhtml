@@ -8,65 +8,115 @@
 
 <ui:composition template="/WEB-INF/templates/padrao.xhtml">
 	<ui:define name="header">
-		<h1>Cadastro - </h1>
+		<h3>
+			Cadastro<span class="rótulo rótulo-padrão">Administrador</span>
+		</h3>
 
 	</ui:define>
 	<ui:define name="content">
-		<div class="col-md-2">
 
-			
-			<div class="panel panel-primary">
-				<div class="btn-group-vertical" role="group" aria-label="...">
-
-
-					<!-- Cadastro Carro -->
-					<div class="btn-group">
-						<button type="button" class="btn btn-default dropdown-toggle"
-							data-toggle="dropdown" aria-expanded="false">
-							Carro <span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu" role="menu">
-							<li><a href="#">Cadastra</a></li>
-							<li><a href="#">Buscar</a></li>
-						</ul>
-					</div>
-
-
-					<!-- Cadastro Cliente -->
-					<div class="btn-group">
-						<button type="button" class="btn btn-default dropdown-toggle"
-							data-toggle="dropdown" aria-expanded="false">
-							Cliente <span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu" role="menu">
-							<li><a href="#">Cadastra</a></li>
-							<li><a href="#">Buscar</a></li>
-						</ul>
-					</div>
-
-					<!-- Cadastro Cliente -->
-					<div class="btn-group">
-						<button type="button" class="btn btn-default dropdown-toggle"
-							data-toggle="dropdown" aria-expanded="false">
-							Reserva <span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu" role="menu">
-							<li><a href="#">Cadastra</a></li>
-							<li><a href="#">Buscar</a></li>
-						</ul>
-					</div>
-				</div>
-
-
-			</div>
-
+		<div class="col-md-3">
+			<ul class="nav nav-pills nav-stacked">
+				<li role="presentation" class="dropdown"><a
+					class="dropdown-toggle" data-toggle="dropdown" href="#"
+					role="button" aria-expanded="false"> Carro <span class="caret"></span>
+				</a>
+					<ul class="dropdown-menu" role="menu">
+						<li role="presentation"><a role="menuitem" tabindex="-1"
+							href="cadastrocarro.xhtml">Cadastra</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1"
+							href="#">Busca</a></li>
+					</ul></li>
+			</ul>
 		</div>
-		<div class="col-md-10">
-			<div class="panel panel-primary">
-				<div class="btn-group" role="group" aria-label="...">
-				
-					<button type="button" class="btn btn-default">Enviar</button>
-					<button type="button" class="btn btn-default">Limpar</button>
+		<div class="col-md-9">
+			<div>
+
+				<form>
+
+					<div class="col-md-6">
+						<div class="input-group">
+							<span class="input-group-addon" id="sizing-addon2">ID</span>
+							<h:inputText styleClass="form-control"
+								value="#{carroMB.carro.id}" />
+						</div>
+						<br />
+						<div class="input-group">
+							<span class="input-group-addon" id="sizing-addon2">Marca</span> <input
+								type="text" class="form-control" placeholder=""
+								aria-describedby="sizing-addon2"></input>
+						</div>
+						<br />
+						<div class="input-group">
+							<span class="input-group-addon" id="sizing-addon2">Modelo</span>
+							<input type="text" class="form-control" placeholder=""
+								aria-describedby="sizing-addon2"></input>
+						</div>
+						<br />
+						<div class="input-group">
+							<span class="input-group-addon" id="sizing-addon2">Ano</span> <input
+								type="text" class="form-control" placeholder=""
+								aria-describedby="sizing-addon2"></input>
+						</div>
+						<br />
+						<div class="input-group">
+							<span class="input-group-addon" id="sizing-addon2">Valor</span> <input
+								type="text" class="form-control" placeholder=""
+								aria-describedby="sizing-addon2"></input>
+						</div>
+						<br />
+						<div class="input-group">
+							<span class="input-group-addon" id="sizing-addon2">Imagen</span>
+							<input type="text" class="form-control" placeholder=""
+								aria-describedby="sizing-addon2"></input>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="input-group">
+							<span class="input-group-addon" id="sizing-addon2">Quantidade
+								de Passageiros</span> <input type="text" class="form-control"
+								placeholder="" aria-describedby="sizing-addon2"></input>
+						</div>
+						<br />
+						<div class="input-group">
+							<span class="input-group-addon" id="sizing-addon2">Motor</span>
+							<h:inputText styleClass="form-control"
+								value="#{carroMB.carro.motor}" />
+						</div>
+						<br />
+						<div class="input-group">
+							<span class="input-group-addon" id="sizing-addon2">Portas</span>
+							<h:inputText styleClass="form-control"
+								value="#{carroMB.carro.quantportas}" />
+						</div>
+						<br />
+						<div class="input-group">
+							<span class="input-group-addon" id="sizing-addon2">Direção</span>
+							<input type="text" class="form-control" placeholder=""
+								aria-describedby="sizing-addon2"></input>
+						</div>
+						<br />
+
+						<div class="input-group">
+							<span class="input-group-addon" id="sizing-addon2">Placa</span> <input
+								type="text" class="form-control" placeholder=""
+								aria-describedby="sizing-addon2"></input>
+						</div>
+					</div>
+
+				</form>
+
+
+				<br />
+
+				<div class="col-md-12">
+					<br></br>
+					<div class="btn-group" role="group" aria-label="...">
+
+						<button type="button" class="btn btn-default">Enviar</button>
+						<button type="button" class="btn btn-default">Limpar</button>
+					</div>
 				</div>
 
 			</div>

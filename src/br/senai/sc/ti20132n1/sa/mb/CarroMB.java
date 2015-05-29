@@ -38,6 +38,24 @@ public class CarroMB {
 		return carros;
 	}
 	
+	public String salvar(){
+		carroDao.salvar(carro);
+		return "listacanal?faces-redirect=true";
+	}
+	
+	public String excluir(String idParam){
+		Long id = Long.valueOf(idParam);
+		carroDao.excluir(id);
+		carros = null;
+		return "";
+	}
+	
+	public String editar(String idParam){
+		Long id = Long.valueOf(idParam);
+		carro = carroDao.buscarPorId(id);
+		return "formcanal";
+	}
+	
 	
 	
 	
