@@ -38,6 +38,7 @@ public class CarroMB {
 		return carros;
 	}
 	
+
 	public void setCarros(List<Carro> carros){
 		this.carros = carros;
 	}
@@ -59,6 +60,7 @@ public class CarroMB {
 		carroDao.buscarPorId(id);
 		return "formcarro";
 		}
+
 	
 	
 	

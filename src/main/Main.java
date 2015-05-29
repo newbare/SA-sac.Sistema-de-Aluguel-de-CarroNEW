@@ -25,9 +25,16 @@ public class Main {
 		carrodao.excluir(carro.getId());
 		Carro carro2 = carrodao.buscarPorId(4L);
 		carro2.setDescricao("blablablabla");
+<<<<<<< HEAD
 		carrodao.fechar();
 		
 		
+=======
+//		List<Carro> carros = carrodao.listar();
+//		carrodao.fechar();
+//		System.out.println(carros);
+//		
+>>>>>>> branch 'master' of https://github.com/nestoraugusto/SA-sac.Sistema-de-Aluguel-de-Carro.git
 	}
 	
 	
