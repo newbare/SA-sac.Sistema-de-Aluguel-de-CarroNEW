@@ -28,7 +28,7 @@
 						<li role="presentation"><a role="menuitem" tabindex="-1"
 							href="#">Busca</a></li>
 						<li role="presentation"><a role="menuitem" tabindex="-1"
-							href="listarCarros.xhtml">Listar Carros</a></li>		
+							href="listarcarros.xhtml">Listar Carros</a></li>		
 					</ul></li>
 			</ul>
 		</div>
@@ -42,8 +42,9 @@
 							<h:panelGroup rendered="#{not empty carroMB.carro.id}">
 								<span class="input-group-addon" id="sizing-addon2">ID</span>
 								<h:inputText styleClass="form-control"
-									value="#{carroMB.carro.id}" />
+									value="#{carroMB.carro.id}" readonly="true" />
 							</h:panelGroup>
+							<h:inputHidden value="#{carroMB.carro.id}" />
 						</div>
 						<br />
 						<div class="input-group">

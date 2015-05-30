@@ -17,7 +17,6 @@ public class Carro {
 	private int quantpassageiros;
 	private String motor;
 	private int quantportas;
-	private String descricao;
 	private String direcao;
 	private String imagen;
 	private String placa;
@@ -72,12 +71,6 @@ public class Carro {
 	public void setQuantportas(int quantportas) {
 		this.quantportas = quantportas;
 	}
-	public String getDescricao() {
-		return descricao;
-	}
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
 	public String getDirecao() {
 		return direcao;
 	}
@@ -101,7 +94,7 @@ public class Carro {
 		return "\nID:" + id + "\nMarca:" + marca + "\nModelo:" + model
 				+ "\nAno=" + ano + "\nValor do carro:" + valorcarro
 				+ "\nQuantidade de passageiros:" + quantpassageiros + "\nMotor=" + motor
-				+ "\n Quantidade de portas:" + quantportas + "\nDescricao:" + descricao
+				+ "\n Quantidade de portas:" + quantportas
 				+ "\nDirecao=" + direcao + "\n";
 	}
 	

@@ -5,7 +5,7 @@ import java.util.List;
 
 
 
-import javax.annotation.ManagedBean;
+import javax.faces.bean.ManagedBean;
 import javax.annotation.PostConstruct;
 
 import br.senai.sc.ti20132n1.sa.Dao.CarroDao;
@@ -44,10 +44,8 @@ public class CarroMB {
 	}
 
 	public String salvar() {
-		CarroDao dao = new CarroDao();
-		dao.salvar(carro);
-		carro = new Carro();
-		return "";
+		carroDao.salvar(carro);
+		return "listacarro?faces-redirect=true";
 	}
 
 	public String excluir(String idParam) {
@@ -60,7 +58,7 @@ public class CarroMB {
 	public String editar(String idParam) {
 		Long id = Long.valueOf(idParam);
 		carro = carroDao.buscarPorId(id);
-		return "formcarro";
+		return "cadastrocarro";
 	}
 
 }

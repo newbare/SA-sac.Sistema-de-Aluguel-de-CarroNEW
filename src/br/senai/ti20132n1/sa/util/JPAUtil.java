@@ -25,7 +25,7 @@ public class JPAUtil {
 	}
 
 	static void creteEntityManagerFactory() {
-		entityManagerFactory = Persistence.createEntityManagerFactory("sac");		
+		entityManagerFactory = Persistence.createEntityManagerFactory("SA-sac.Sistema-de-Aluguel-de-Carro");		
 	}
 
 	static void entityManagerFactoryClose() {
