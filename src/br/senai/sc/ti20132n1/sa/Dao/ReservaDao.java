@@ -11,14 +11,6 @@ import br.senai.sc.ti20132n1.sa.model.Reserva;
 
 public class ReservaDao extends Dao{
 	
-	private EntityManagerFactory entityManagerFactory;
-	private EntityManager entityManager;
-	
-	public ReservaDao(){
-		entityManagerFactory = Persistence.createEntityManagerFactory("sacjpadb");
-		entityManager = entityManagerFactory.createEntityManager();
-	}
-	
 	public void salvar(Reserva reserva) {
 		getEntityManager().merge(reserva);
 	}
@@ -40,11 +32,7 @@ public class ReservaDao extends Dao{
 	}
 	
 	
-	public void fechar(){
-		entityManager.close();
-		
-		entityManagerFactory.close();
-	}
+
 	
 
 }

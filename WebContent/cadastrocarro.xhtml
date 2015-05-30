@@ -33,51 +33,54 @@
 		<div class="col-md-9">
 			<div>
 
-				<form>
+				<h:form>
 
 					<div class="col-md-6">
 						<div class="input-group">
-							<span class="input-group-addon" id="sizing-addon2">ID</span>
-							<h:inputText styleClass="form-control"
-								value="#{carroMB.carro.id}" />
+							<h:panelGroup rendered="#{not empty carroMB.carro.id}">
+								<span class="input-group-addon" id="sizing-addon2">ID</span>
+								<h:inputText styleClass="form-control"
+									value="#{carroMB.carro.id}" />
+							</h:panelGroup>
 						</div>
 						<br />
 						<div class="input-group">
-							<span class="input-group-addon" id="sizing-addon2">Marca</span> <input
-								type="text" class="form-control" placeholder=""
-								aria-describedby="sizing-addon2"></input>
+							<span class="input-group-addon" id="sizing-addon2">Marca</span>
+							<h:inputText styleClass="form-control"
+								value="#{carroMB.carro.marca}" />
 						</div>
 						<br />
 						<div class="input-group">
 							<span class="input-group-addon" id="sizing-addon2">Modelo</span>
-							<input type="text" class="form-control" placeholder=""
-								aria-describedby="sizing-addon2"></input>
+							<h:inputText styleClass="form-control"
+								value="#{carroMB.carro.model}" />
 						</div>
 						<br />
 						<div class="input-group">
-							<span class="input-group-addon" id="sizing-addon2">Ano</span> <input
-								type="text" class="form-control" placeholder=""
-								aria-describedby="sizing-addon2"></input>
+							<span class="input-group-addon" id="sizing-addon2">Ano</span>
+							<h:inputText styleClass="form-control"
+								value="#{carroMB.carro.ano}" />
 						</div>
 						<br />
 						<div class="input-group">
-							<span class="input-group-addon" id="sizing-addon2">Valor</span> <input
-								type="text" class="form-control" placeholder=""
-								aria-describedby="sizing-addon2"></input>
+							<span class="input-group-addon" id="sizing-addon2">Valor</span>
+							<h:inputText styleClass="form-control"
+								value="#{carroMB.carro.valorcarro}" />
 						</div>
 						<br />
 						<div class="input-group">
 							<span class="input-group-addon" id="sizing-addon2">Imagen</span>
-							<input type="text" class="form-control" placeholder=""
-								aria-describedby="sizing-addon2"></input>
+							<h:inputText styleClass="form-control"
+								value="#{carroMB.carro.imagen}" />
 						</div>
 					</div>
 
 					<div class="col-md-6">
 						<div class="input-group">
 							<span class="input-group-addon" id="sizing-addon2">Quantidade
-								de Passageiros</span> <input type="text" class="form-control"
-								placeholder="" aria-describedby="sizing-addon2"></input>
+								de Passageiros</span>
+							<h:inputText styleClass="form-control"
+								value="#{carroMB.carro.quantpassageiros}" />
 						</div>
 						<br />
 						<div class="input-group">
@@ -94,31 +97,33 @@
 						<br />
 						<div class="input-group">
 							<span class="input-group-addon" id="sizing-addon2">Direção</span>
-							<input type="text" class="form-control" placeholder=""
-								aria-describedby="sizing-addon2"></input>
+							<h:inputText styleClass="form-control"
+								value="#{carroMB.carro.direcao}" />
 						</div>
 						<br />
 
 						<div class="input-group">
-							<span class="input-group-addon" id="sizing-addon2">Placa</span> <input
-								type="text" class="form-control" placeholder=""
-								aria-describedby="sizing-addon2"></input>
+							<span class="input-group-addon" id="sizing-addon2">Placa</span>
+							<h:inputText styleClass="form-control"
+								value="#{carroMB.carro.placa}" />
 						</div>
 					</div>
 
-				</form>
+					<div class="col-md-12">
+						<br></br>
+						<div class="btn-group" role="group" aria-label="...">
 
-
-				<br />
-
-				<div class="col-md-12">
-					<br></br>
-					<div class="btn-group" role="group" aria-label="...">
-
-						<button type="button" class="btn btn-default">Enviar</button>
-						<button type="button" class="btn btn-default">Limpar</button>
+							<h:commandButton action="#{carroMB.salvar()}" value="Salvar"
+								styleClass="btn btn-success" />
+							<button type="button" class="btn btn-default">Limpar</button>
+						</div>
 					</div>
-				</div>
+
+				</h:form>
+
+
+
+
 
 			</div>
 		</div>

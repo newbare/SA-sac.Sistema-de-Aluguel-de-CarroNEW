@@ -19,6 +19,8 @@ public class Carro {
 	private int quantportas;
 	private String descricao;
 	private String direcao;
+	private String imagen;
+	private String placa;
 	
 	
 	
@@ -81,6 +83,18 @@ public class Carro {
 	}
 	public void setDirecao(String direcao) {
 		this.direcao = direcao;
+	}
+	public String getImagen() {
+		return imagen;
+	}
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+	public String getPlaca() {
+		return placa;
+	}
+	public void setPlaca(String placa) {
+		this.placa = placa;
 	}
 	@Override
 	public String toString() {

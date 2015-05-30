@@ -12,14 +12,7 @@ import br.senai.sc.ti20132n1.sa.model.Cliente;
 
 public class ClienteDao extends Dao{
 
-	private EntityManagerFactory entityManagerFactory;
-	private EntityManager entityManager;
 
-	public ClienteDao() {
-		entityManagerFactory = Persistence
-				.createEntityManagerFactory("sacjpadb");
-		entityManager = entityManagerFactory.createEntityManager();
-	}
 
 	public void salvar(Cliente cliente) {
 		getEntityManager().merge(cliente);
@@ -43,10 +36,6 @@ public class ClienteDao extends Dao{
 		return query.getResultList();
 	}
 	
-	public void fechar(){
-		entityManager.close();
-		
-		entityManagerFactory.close();
-	}
+	
 
 }
