@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/templates/padrao.xhtml">
+	<ui:define name="title">
+	    Carros
+	</ui:define>
+	<ui:define name="header">
+		<ui:define name="content">
+
+			<div class="col-md-3">
+				<ul class="nav nav-pills nav-stacked">
+					<li role="presentation" class="dropdown"><a
+						class="dropdown-toggle" data-toggle="dropdown" href="#"
+						role="button" aria-expanded="false"> Carro <span class="caret"></span>
+					</a>
+						<ul class="dropdown-menu" role="menu">
+							<li role="presentation"><a role="menuitem" tabindex="-1"
+								href="cadastrocarro.xhtml">Cadastra</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1"
+								href="#">Busca</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1"
+								href="#">Listar Carros</a></li>
+						</ul></li>
+				</ul>
+			</div>
+			<div class="col-md-9">
+				<h:form>
+					<h:dataTable styleClass="table" value="#{carroMB.carros}"
+						var="item">
+						<h:column>
+							<f:facet name="header">ID</f:facet>
+							<h:outputText value="#{item.id}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Marca</f:facet>
+							<h:outputText value="#{item.marca}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Modelo</f:facet>
+							<h:outputText value="#{item.modelo}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Ano</f:facet>
+							<h:outputText value="#{item.ano}" />
+						</h:column>
+
+						<h:column>
+							<h:commandLink styleClass="btn btn-info"
+								action="#{carroMB.editar(item.id)}">
+								<span class="glyphicon glyphicon-edit"></span>
+							</h:commandLink>
+							<h:outputText value="&nbsp;&nbsp;&nbsp;" />
+							<h:commandLink styleClass="btn btn-warning"
+								onclick="return confirm('Tem certeza?');"
+								action="#{carroMB.excluir(item.id)}">
+								<span class="glyphicon glyphicon-trash"></span>
+							</h:commandLink>
+						</h:column>
+					</h:dataTable>
+				</h:form>
+			</div>
+		</ui:define>
+	</ui:define>
+	<ui:define name="content">
+
+	</ui:define>
+	<ui:define name="footer">
+
+	</ui:define>
+</ui:composition>
+</html>
