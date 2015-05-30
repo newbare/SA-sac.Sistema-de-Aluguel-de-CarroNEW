@@ -2,8 +2,11 @@ package br.senai.sc.ti20132n1.sa.mb;
 
 import java.util.List;
 
+
+
+
+import javax.annotation.ManagedBean;
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ManagedBean;
 
 import br.senai.sc.ti20132n1.sa.Dao.CarroDao;
 import br.senai.sc.ti20132n1.sa.model.Carro;

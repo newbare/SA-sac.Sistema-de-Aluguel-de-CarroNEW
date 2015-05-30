@@ -1,12 +1,11 @@
 package br.senai.sc.ti20132n1.sa.Dao;
 
-import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
+import java.util.List;
 import br.senai.sc.ti20132n1.sa.model.Administrador;
 
 
