@@ -2,15 +2,23 @@ package br.senai.sc.ti20132n1.sa.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "administrador")
+@NamedQueries({ @NamedQuery(name = "Administrador.findAll", query = "SELECT p FROM Administrador p") })
 public class Administrador {
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(unique=true, nullable=false)
 	private long id;
 	private String nome;
 	private Date dataNascimento;

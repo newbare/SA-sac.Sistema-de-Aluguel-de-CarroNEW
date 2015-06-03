@@ -5,10 +5,15 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
 import org.hibernate.type.descriptor.java.UUIDTypeDescriptor.ToStringTransformer;
 
 @Entity
+@Table(name = "cliente")
+@NamedQueries({ @NamedQuery(name = "Cliente.findAll", query = "SELECT p FROM Cliente p") })
 public class Cliente {
 	
 	@Id

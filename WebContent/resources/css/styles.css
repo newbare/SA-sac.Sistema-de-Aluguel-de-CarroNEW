@@ -103,4 +103,8 @@ element.style {
 margin-bottom: 8px;
 }
 
+element.style {
+  height: 70px;
+}
+
 

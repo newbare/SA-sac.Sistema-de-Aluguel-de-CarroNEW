@@ -18,9 +18,9 @@
 		</properties>
 	</persistence-unit>
 	
-	<persistence-unit 	name="CadastroPessoasTest" transaction-type="RESOURCE_LOCAL">
+	<persistence-unit 	name="SA-sac.Sistema-de-Aluguel-de-CarroTest" transaction-type="RESOURCE_LOCAL">
 	<provider>org.hibernate.ejb.HibernatePersistence</provider>
-	<class>br.senai.sc.ti20132n1.sa.modelo.Cliente</class>
+	<class>br.senai.sc.ti20132n1.sa.model.Cliente</class>
 	<properties>
 		<property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/>
 		<property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:file:target/testdb"/>

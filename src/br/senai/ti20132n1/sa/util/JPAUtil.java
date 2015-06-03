@@ -8,27 +8,51 @@ import javax.servlet.ServletRequest;
 
 public class JPAUtil {
 
+	private static final String  SA_sac_Sistema_de_Aluguel_de_Carro_TEST = "SA-sac.Sistema-de-Aluguel-de-CarroTest";
+	private static final String  SA_sac_Sistema_de_Aluguel_de_Carro = "SA-sac.Sistema-de-Aluguel-de-Carro";
 	private static final String ENTITY_MANAGER = "ENTITY_MANAGER";
-	private static EntityManagerFactory entityManagerFactory;
+	public static EntityManagerFactory entityManagerFactory;
 
-	public static EntityManager getEntityManager() {
-		ServletRequest request = (ServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
-		return (EntityManager) request.getAttribute(ENTITY_MANAGER);
+	public static EntityManager getEntityManager() throws Exception{
+		String managerFactoryInUse = entityManagerFactory.getProperties().get(
+				"hibernate.ejb.persistenceUnitName").toString();
+		
+		if (SA_sac_Sistema_de_Aluguel_de_Carro_TEST.equalsIgnoreCase(managerFactoryInUse)) {
+			return createEntityManager();
+		} else if(SA_sac_Sistema_de_Aluguel_de_Carro.equalsIgnoreCase(managerFactoryInUse)) {
+			ServletRequest request = (ServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
+			return (EntityManager) request.getAttribute(ENTITY_MANAGER);
+		} else {
+			throw new Exception("Não foi possível localizar o entityManagerFactory em uso.");
+		}
+		
+		
+	}
+	
+	static EntityManager createEntityManager() {
+		return createEntityManager(null);
 	}
 
 	static EntityManager createEntityManager(ServletRequest request) {
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
-		
-		request.setAttribute(ENTITY_MANAGER, entityManager);
-		
+		if (request != null) {
+			request.setAttribute(ENTITY_MANAGER, entityManager);
+			return entityManager;
+		}
 		return entityManager;
 	}
-
-	static void creteEntityManagerFactory() {
-		entityManagerFactory = Persistence.createEntityManagerFactory("SA-sac.Sistema-de-Aluguel-de-Carro");		
+	
+	public static void createEntityManagerFactory(String persistenceUnit) {
+		if (entityManagerFactory == null) {
+			entityManagerFactory = Persistence.createEntityManagerFactory(persistenceUnit);		
+		}
 	}
 
-	static void entityManagerFactoryClose() {
+	public static void createEntityManagerFactory() {
+		createEntityManagerFactory("SA-sac.Sistema-de-Aluguel-de-Carro");		
+	}
+
+	public static void entityManagerFactoryClose() {
 		entityManagerFactory.close();
 	}
 
