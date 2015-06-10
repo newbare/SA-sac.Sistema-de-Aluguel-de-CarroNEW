@@ -12,28 +12,42 @@ import br.senai.sc.ti20132n1.sa.model.Carro;
 
 
 
-public class CarroDao extends Dao {
+public class CarroDao extends DaoImplements<Carro> {
+	
+	public CarroDao(){
+		super(Carro.class);
+	}
 	
 	public void salvar(Carro carro) {
-		getEntityManager().merge(carro);
+		if (carro.getId() != null){
+			save(carro);
+		}else{
+			update(carro);
+		}
 	}
 	
 
 	public void excluir(Long id) {
-		Carro carro = getEntityManager().getReference(Carro.class, id);
-		getEntityManager().remove(carro);
+		Carro carro = findAllById(id);
+		delete(carro);
 	}
-
-	public Carro buscarPorId(Long id) {
-		return getEntityManager().find(Carro.class, id);
+	
+	public List<Carro> listarTodos(Carro carro) {
+		return findAll();
 	}
+	
+	public Carro buscarPorId(Long id){
+		return findAllById(id);
+	}
+	
+	
 
 	
-	@SuppressWarnings("unchecked")
-	public List<Carro> listarTodos() {
-		Query query = getEntityManager().createQuery("From Carro",Carro.class);
-		return query.getResultList();
-	}
+//	@SuppressWarnings("unchecked")
+//	public List<Carro> listarTodos() {
+//		Query query = getEntityManager().createQuery("From Carro",Carro.class);
+//		return query.getResultList();
+//	}
 	
 	
 	

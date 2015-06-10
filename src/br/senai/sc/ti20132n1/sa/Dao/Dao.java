@@ -1,13 +1,18 @@
 package br.senai.sc.ti20132n1.sa.Dao;
 
-import javax.persistence.EntityManager;
+import java.util.List;
 
-import br.senai.ti20132n1.sa.util.JPAUtil;
+public interface Dao<T> {
 
-public class Dao {
-
-	protected EntityManager getEntityManager() {
-		return JPAUtil.getEntityManager();
-
-	}
+	public void save(T t);
+	
+	public void update(T t);
+	
+	public void delete(T t);
+	
+	public void deleteAll(List<T> t);
+	
+	public T findAllById(Integer id);
+	
+	public List<T> findAll();
 }

@@ -12,7 +12,7 @@ public interface DaoNewDO<T> {
 	
 	public void deleteAll(List<T> t);
 	
-	public T findAllById(Integer id);
+	public T findAllById(Long id);
 	
 	public List<T> findAll();
 

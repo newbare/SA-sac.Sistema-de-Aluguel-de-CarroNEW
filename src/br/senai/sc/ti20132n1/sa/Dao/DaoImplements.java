@@ -24,7 +24,7 @@ public class DaoImplements<T> implements DaoNewDO<T>  {
 		}
 	}
 	
-	private void checkEntityManager() {
+	private void checkEntityManager() throws Exception {
 		if (em == null || !em.isOpen()) {
 			em = JPAUtil.getEntityManager();
 		}
@@ -98,7 +98,7 @@ public class DaoImplements<T> implements DaoNewDO<T>  {
 	}
 
 	@Override
-	public T findAllById(Integer id) {
+	public T findAllById(Long id) {
 		T result = null;
 		try {
 			checkEntityManager();
