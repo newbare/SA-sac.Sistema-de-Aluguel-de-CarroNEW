@@ -1,4 +1,4 @@
-package br.senai.sc.ti20132n1.sa.Dao;
+package br.senai.sc.ti20132n1.sa.dao;
 
 import java.util.List;
 
@@ -7,33 +7,36 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
+import br.senai.sc.ti20132n1.sa.model.Administrador;
 import br.senai.sc.ti20132n1.sa.model.Cliente;
 
 
-public class ClienteDao extends Dao{
+public class ClienteDao extends DaoImplements<Cliente>{
 
+	public ClienteDao(){
+		super(Cliente.class);
+	}
 
-
+	
 	public void salvar(Cliente cliente) {
-		getEntityManager().merge(cliente);
+		save(cliente);
 	}
 	
 
 	public void excluir(Long id) {
-		Cliente cliente= getEntityManager().getReference(Cliente.class, id);
-		getEntityManager().remove(cliente);
+		Cliente cliente = findAllById(id);
+		delete(cliente);
 	}
 
 	public Cliente buscarPorId(Long id) {
-		return getEntityManager().find(Cliente.class, id);
+		return findAllById(id);
 	}
 
 	
 
-	@SuppressWarnings("unchecked")
+	
 	public List<Cliente> listarTodos() {
-		Query query = getEntityManager().createQuery("From Cliente",Cliente.class);
-		return query.getResultList();
+		return findAll();
 	}
 	
 	

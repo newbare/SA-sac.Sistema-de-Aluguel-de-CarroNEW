@@ -2,11 +2,13 @@ package br.senai.sc.ti20132n1.sa.dao;
 
 import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import br.senai.sc.ti20132n1.sa.Dao.CarroDao;
 import br.senai.sc.ti20132n1.sa.configuration.JUnitRunner;
+import br.senai.sc.ti20132n1.sa.dao.CarroDao;
 import br.senai.sc.ti20132n1.sa.model.Carro;
 import br.senai.ti20132n1.sa.util.JPAUtil;
 
@@ -30,7 +32,15 @@ public class CarroDaoTest {
 		dao = null;
 	}
 	
-	public void testCadastraNovoCarro(){
+	@Test
+	public void testeCadastraCarro(){
+		Carro carroSalvo = new Carro();
+		Carro carroRecuperado = dao.buscarPorId(1L);
+		
+		Assert.assertEquals(carroSalvo.getId(), carroRecuperado.getId());
+	}
+	
+	public Carro testCadastraNovoCarro(){
 		Carro c = new Carro();
 		c.setMarca("BMW");
 		c.setAno(2015);
@@ -43,7 +53,7 @@ public class CarroDaoTest {
 		c.setPlaca("TED2016");
 		
 		dao.salvar(c);
-		assertTrue(c.getId() != null);
+		return c;
 		
 	}
 

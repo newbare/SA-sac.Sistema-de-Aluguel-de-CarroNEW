@@ -1,4 +1,4 @@
-package br.senai.sc.ti20132n1.sa.Dao;
+package br.senai.sc.ti20132n1.sa.dao;
 
 import java.util.List;
 import java.util.logging.Logger;
@@ -7,7 +7,7 @@ import javax.persistence.EntityManager;
 
 import br.senai.ti20132n1.sa.util.JPAUtil;
 
-public class DaoImplements<T> implements DaoNewDO<T>  {
+public class DaoImplements<T> implements Dao<T>  {
 	
 	private static Logger logger;
 	private Class<T> klass;

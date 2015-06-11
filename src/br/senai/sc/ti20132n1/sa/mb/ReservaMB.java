@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 
-import br.senai.sc.ti20132n1.sa.Dao.ReservaDao;
+import br.senai.sc.ti20132n1.sa.dao.ReservaDao;
 import br.senai.sc.ti20132n1.sa.model.Reserva;
 
 public class ReservaMB {

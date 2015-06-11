@@ -5,7 +5,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 
-import br.senai.sc.ti20132n1.sa.Dao.AdministradorDao;
+import br.senai.sc.ti20132n1.sa.dao.AdministradorDao;
 import br.senai.sc.ti20132n1.sa.model.Administrador;
 
 @ManagedBean

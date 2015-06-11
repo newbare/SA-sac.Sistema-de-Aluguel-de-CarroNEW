@@ -5,10 +5,11 @@ import java.util.List;
 
 
 
+
 import javax.faces.bean.ManagedBean;
 import javax.annotation.PostConstruct;
 
-import br.senai.sc.ti20132n1.sa.Dao.CarroDao;
+import br.senai.sc.ti20132n1.sa.dao.CarroDao;
 import br.senai.sc.ti20132n1.sa.model.Carro;
 
 @ManagedBean
@@ -34,7 +35,7 @@ public class CarroMB {
 
 	public List<Carro> getCarros() {
 		if (carros == null) {
-			carros = carroDao.listarTodos();
+			carros = carroDao.listarTodos(carro);
 		}
 		return carros;
 	}
