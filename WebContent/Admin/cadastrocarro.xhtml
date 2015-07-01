@@ -1,0 +1,183 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/templates/padraoAdmin.xhtml">
+	<ui:define name="header">
+		<h3>
+			Cadastro<span class="rótulo rótulo-padrão">de Carro</span>
+		</h3>
+
+	</ui:define>
+	<ui:define name="content">
+
+		<div class="col-md-3">
+			<ul class="nav nav-pills nav-stacked">
+				<li role="presentation" class="dropdown"><a
+					class="dropdown-toggle" data-toggle="dropdown" href="#"
+					role="button" aria-expanded="false"> Carro <span class="caret"></span>
+				</a>
+
+					<ul class="dropdown-menu" role="menu">
+						<li role="presentation"><a role="menuitem" tabindex="-1"
+							href="cadastrocarro.xhtml">Cadastra</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1"
+							href="#">Busca</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1"
+							href="listarcarros.xhtml">Listar</a></li>
+					</ul></li>
+
+				<ul class="nav nav-pills nav-stacked">
+					<li role="presentation" class="dropdown"><a
+						class="dropdown-toggle" data-toggle="dropdown" href="#"
+						role="button" aria-expanded="false"> Cliente <span
+							class="caret"></span>
+					</a>
+						<ul class="dropdown-menu" role="menu">
+							<li role="presentation"><a role="menuitem" tabindex="-1"
+								href="cadastrocliente.xhtml">Cadastra</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1"
+								href="#">Busca</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1"
+								href="listarcliente.xhtml">Listar</a></li>
+						</ul></li>
+				</ul>
+			</ul>
+		</div>
+		<div class="col-md-9">
+			<div>
+
+				<h:form enctype="multipart/form-data">
+					<div class="col-md-6">
+						<fieldset>
+							<h:panelGroup rendered="#{not empty carroMB.carro.id}">
+								<span class="input-group-addon" id="sizing-addon2">ID</span>
+								<h:inputText styleClass="form-control"
+									value="#{carroMB.carro.id}" readonly="true" />
+							</h:panelGroup>
+							<h:inputHidden value="#{carroMB.carro.id}" />
+							<br />
+							<div class="input-group" style="width: 382px;">
+								<h:outputLabel value="Marca " />
+								<h:inputText styleClass="form-control"
+									value="#{carroMB.carro.marca}" required="true"
+									requiredMessage="Preenchimento obrigatório" />
+							</div>
+							<br />
+							<div class="input-group" style="width: 382px;">
+								<h:outputLabel value="Modelo " />
+								<h:inputText styleClass="form-control"
+									value="#{carroMB.carro.model}" required="true"
+									requiredMessage="Preenchimento obrigatório" />
+							</div>
+							<br />
+							<div class="input-group" style="width: 382px;">
+								<h:outputLabel value="Ano " />
+								<h:inputText styleClass="form-control"
+									value="#{carroMB.carro.ano}" required="true"
+									requiredMessage="Preenchimento obrigatório" />
+							</div>
+							<br />
+							<div class="input-group" style="width: 382px;">
+								<h:outputLabel value="Valor " />
+								<h:inputText styleClass="form-control"
+									value="#{carroMB.carro.valorcarro}" required="true"
+									requiredMessage="Preenchimento obrigatório" />
+							</div>
+							<br />
+							<div class="input-group" style="width: 382px;">
+								<h:outputLabel value="Placa " />
+								<h:inputText styleClass="form-control"
+									value="#{carroMB.carro.placa}" required="true"
+									requiredMessage="Preenchimento obrigatório" />
+							</div>
+
+						
+						</fieldset>
+					</div>
+
+					<div class="col-md-6">
+						<fieldset>
+							<br></br>
+							<div class="input-group" style="width: 382px;">
+								<h:outputLabel value="Quantidade de passageiros " />
+								<h:selectOneMenu styleClass="form-control"
+									value="#{carroMB.carro.quantpassageiros}">
+									<f:selectItem itemValue="2" />
+									<f:selectItem itemValue="4" />
+									<f:selectItem itemValue="6" />
+								</h:selectOneMenu>
+
+
+							</div>
+							<br />
+							<div class="input-group" style="width: 382px;">
+								<h:outputLabel value="Motor " />
+								<h:selectOneMenu styleClass="form-control"
+									value="#{carroMB.carro.motor}">
+									<f:selectItem itemValue="1.0" />
+									<f:selectItem itemValue="1.4" />
+									<f:selectItem itemValue="1.8" />
+									<f:selectItem itemValue="2.0" />
+									
+								</h:selectOneMenu>
+							</div>
+							<br />
+							<div class="input-group" style="width: 382px;">
+								<h:outputLabel value="Numero de Portas " />
+								<h:selectOneMenu styleClass="form-control"
+									value="#{carroMB.carro.quantportas}">
+									<f:selectItem itemValue="2" />
+									<f:selectItem itemValue="3" />
+									<f:selectItem itemValue="4" />
+								</h:selectOneMenu>
+							</div>
+							<br />
+							<div class="input-group" style="width: 382px;">
+								<h:outputLabel value="Direção " />
+								<h:selectOneMenu styleClass="form-control"
+									value="#{carroMB.carro.direcao}" >
+									<f:selectItem itemValue="Hidraulica" />
+									<f:selectItem itemValue="Mecânica" />
+									<f:selectItem itemValue="Elétrica" />
+								</h:selectOneMenu>	
+							</div>
+							<br />
+							<h:outputLabel value="Imagem" />
+							<h:inputFile styleClass="form-control" value="#{carroMB.imagem}" />
+							<h:inputHidden styleClass="form-control" value="#{carroMB.carro.imagem}" />
+
+
+						</fieldset>
+					</div>
+
+					<div class="col-md-12">
+						<br></br>
+						<h:messages globalOnly="true" styleClass="alert alert-warnning" style="color: #0C7600;" />
+						<div class="btn-group" role="group" aria-label="...">
+
+							<h:commandButton action="#{carroMB.salvar()}" value="Salvar"
+								styleClass="btn btn-success" />
+							<button type="button" class="btn btn-default">Limpar</button>
+						</div>
+					</div>
+				</h:form>
+
+
+
+
+
+			</div>
+		</div>
+
+	</ui:define>
+	<ui:define name="footer">
+
+	</ui:define>
+</ui:composition>
+</html>

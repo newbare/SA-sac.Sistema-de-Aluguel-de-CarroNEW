@@ -1,31 +1,25 @@
 package br.senai.sc.ti20132n1.sa.model;
 
-import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
 
-import org.hibernate.type.descriptor.java.UUIDTypeDescriptor.ToStringTransformer;
+
 
 @Entity
-@Table(name = "cliente")
-@NamedQueries({ @NamedQuery(name = "Cliente.findAll", query = "SELECT p FROM Cliente p") })
 public class Cliente {
 	
 	@Id
 	@GeneratedValue
 	private long id;
 	private String nome;
+	private String nomeusuario;
 	private String senha;
 	private String cpf;
 	private String telefone;
 	private String email;
-	private Date dataNascimento;
-	private int numeroHabilitacao;
+	private String dataNascimento;
+	private Double numeroHabilitacao;
 	private String endereco;
 	private String cidade;
 	private String estado;
@@ -66,16 +60,16 @@ public class Cliente {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Date getDataNascimento() {
+	public String getDataNascimento() {
 		return dataNascimento;
 	}
-	public void setDataNascimento(Date dataNascimento) {
+	public void setDataNascimento(String dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
-	public int getNumeroHabilitacao() {
+	public Double getNumeroHabilitacao() {
 		return numeroHabilitacao;
 	}
-	public void setNumeroHabilitacao(int numeroHabilitacao) {
+	public void setNumeroHabilitacao(Double numeroHabilitacao) {
 		this.numeroHabilitacao = numeroHabilitacao;
 	}
 	public String getEndereco() {
@@ -95,6 +89,12 @@ public class Cliente {
 	}
 	public void setEstado(String estado) {
 		this.estado = estado;
+	}
+	public String getNomeusuario() {
+		return nomeusuario;
+	}
+	public void setNomeusuario(String nomeusuario) {
+		this.nomeusuario = nomeusuario;
 	}
 	@Override
 	public String toString(){

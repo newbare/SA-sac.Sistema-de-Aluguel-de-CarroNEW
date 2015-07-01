@@ -2,11 +2,14 @@ package br.senai.sc.ti20132n1.sa.mb;
 
 import java.util.List;
 
+import javax.faces.bean.ManagedBean;
 import javax.annotation.PostConstruct;
+
+
 
 import br.senai.sc.ti20132n1.sa.dao.ClienteDao;
 import br.senai.sc.ti20132n1.sa.model.Cliente;
-
+@ManagedBean
 public class ClienteMB {
 	
 	private Cliente cliente;
@@ -51,8 +54,8 @@ public class ClienteMB {
 	
 	public String editar(String idParam){
 		Long id = Long.valueOf(idParam);
-		clienteDao.buscarPorId(id);
-		return "formcliente";
+		cliente = clienteDao.buscarPorId(id);
+		return "cadastrocliente";
 	}
 	
 	

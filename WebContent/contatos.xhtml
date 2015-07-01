@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml"
@@ -28,18 +28,18 @@
 					<h:form>
 						<fieldset>
 							<h:outputLabel value="Nome " />
-							<h:inputText styleClass="form-control" value="#{contatoMB.nome}" />
+							<h:inputText styleClass="form-control" value="#{contatoMB.contato.nome}" />
 							<br />
 							<h:outputLabel value="Telefone " />
-							<h:inputText  styleClass="form-control" value="#{contatoMB.telefone}" />
+							<h:inputText  styleClass="form-control" value="#{contatoMB.contato.telefone}" />
 							<br />
 							<h:outputLabel value="E-mail " />
-							<h:inputText styleClass="form-control" value="#{contatoMB.email}" />
+							<h:inputText styleClass="form-control" value="#{contatoMB.contato.email}" />
 							<br />
 							<h:outputLabel value="Menssagem " />
-							<h:inputText styleClass="form-control" value="#{contatoMB.menssagem}" />
+							<h:inputText styleClass="form-control" value="#{contatoMB.contato.menssagem}" />
 							<div>
-								<h:commandButton action="#{contatoMB.enviar()}" styleClass="btn btn-succe" value="Enviar" />
+								<h:commandButton action="#{contatoMB.salvar()}" styleClass="btn btn-succe" value="Enviar" />
 								<button class="btn btn-default" type="reset">Restaurar</button>
 							</div>
 						</fieldset>

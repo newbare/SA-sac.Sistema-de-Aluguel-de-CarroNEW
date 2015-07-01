@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/templates/padraoAdmin.xhtml">
+	<ui:define name="header">
+		<h3>
+			Cadastro <span class="rótulo rótulo-padrão">Administrador</span>
+		</h3>
+	</ui:define>
+	<ui:define name="content">
+		<div class="col-md-3">
+			<ul class="nav nav-pills nav-stacked">
+				<li role="presentation" class="dropdown"><a
+					class="dropdown-toggle" data-toggle="dropdown" href="#"
+					role="button" aria-expanded="false"> Carro <span class="caret"></span>
+				</a>
+					<ul class="dropdown-menu" role="menu">
+						<li role="presentation"><a role="menuitem" tabindex="-1"
+							href="cadastrocarro.xhtml">Cadastra</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1"
+							href="#">Busca</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1"
+							href="listarcarros.xhtml">Listar</a></li>
+					</ul></li>
+			</ul>
+			<ul class="nav nav-pills nav-stacked">
+				<li role="presentation" class="dropdown"><a
+					class="dropdown-toggle" data-toggle="dropdown" href="#"
+					role="button" aria-expanded="false"> Cliente <span
+						class="caret"></span>
+				</a>
+					<ul class="dropdown-menu" role="menu">
+						<li role="presentation"><a role="menuitem" tabindex="-1"
+							href="cadastrocliente.xhtml">Cadastra</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1"
+							href="#">Busca</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1"
+							href="listarcliente.xhtml">Listar</a></li>
+					</ul></li>
+			</ul>
+		</div>
+		<div class="col-md-9">
+			<div>
+				<h:form>
+					<div class="col-md-6">
+						<h:panelGroup
+							rendered="#{not empty administradorMB.administrador.id}">
+							<h:outputLabel value="Id" />
+							<h:inputText styleClass="form-control"
+								value="#{administradorMB.administrador.id}" readonly="true" />
+						</h:panelGroup>
+						<h:inputHidden value="#{administradorMB.administrador.id}" />
+						<br />
+						<div class="input-group">
+							<h:panelGroup>
+								<h:outputLabel value="Nome" style="width: 382px;"/>
+								<h:inputText styleClass="form-control"
+									value="#{administradorMB.administrador.nome}"  required="true" requiredMessage="Preenchimento obrigatório"/>
+							</h:panelGroup>
+						</div>
+						<div>
+							<div class="input-group">
+								<h:panelGroup>
+									<h:outputLabel value="Data de Nascimento" />
+									<h:inputText styleClass="form-control"
+										value="#{administradorMB.administrador.nome}"  required="true" requiredMessage="Preenchimento obrigatório"/>
+								</h:panelGroup>
+							</div>
+						</div>
+						<br />
+						<div>
+							<div class="input-group">
+								<h:panelGroup>
+									<h:outputLabel value="CPF" />
+									<h:inputText styleClass="form-control"
+										value="#{administradorMB.administrador.cpf}"  required="true" requiredMessage="Preenchimento obrigatório"/>
+								</h:panelGroup>
+							</div>
+						</div>
+						<br />
+						<div>
+							<div class="input-group">
+								<h:panelGroup>
+									<h:outputLabel value="E-mail" style="width: 382px;"/>
+									<h:inputText styleClass="form-control"
+										value="#{administradorMB.administrador.email}"  required="true" requiredMessage="Preenchimento obrigatório"/>
+								</h:panelGroup>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+
+					<div>
+						<div class="input-group">
+							<h:panelGroup>
+								<h:outputLabel value="Endereço" style="width: 382px;"/>
+								<h:inputText styleClass="form-control"
+									value="#{administradorMB.administrador.endereco}"  required="true" requiredMessage="Preenchimento obrigatório"/>
+							</h:panelGroup>
+						</div>
+					</div>
+					<br/>
+					<div>
+						<div class="input-group">
+							<h:panelGroup>
+								<h:outputLabel value="Cidade" />
+								<h:selectOneMenu styleClass="form-control"
+									value="#{administradorMB.administrador.cidade}">
+									<f:selectItems itemValue="-------" />
+								</h:selectOneMenu> 
+							</h:panelGroup>
+						</div>
+					</div>
+					<br />
+					<div>
+						<div class="input-group">
+							<h:panelGroup>
+								<h:outputLabel value="Estado" />
+								<h:selectOneMenu styleClass="form-control"
+									value="#{administradorMB.administrador.estado}">
+									<f:selectItems itemValue="-------" />
+								</h:selectOneMenu> 
+							</h:panelGroup>
+						</div>
+					</div>
+					<br />
+					<div>
+						<div class="input-group">
+							<h:panelGroup>
+								<h:outputLabel value="Cargo" />
+								<h:selectOneMenu styleClass="form-control"
+									value="#{administradorMB.administrador.cargo}">
+									<f:selectItem itemValue="Vendedor" />
+									<f:selectItem itemValue="Funcionario" />
+									<f:selectItem itemValue="Gerente" />
+									
+								</h:selectOneMenu> 
+							</h:panelGroup>
+						</div>
+					</div>
+					
+
+					</div>
+					<div class="col-md-12">
+						<br></br>
+						<h:messages globalOnly="true" styleClass="alert-success " style="color: #0C7600;" />
+						<div class="btn-group" role="group" aria-label="...">
+							<h:commandButton action="#{administradorMB.salvar()}" value="Salvar"
+								styleClass="btn btn-success" />
+							<button type="button" class="btn btn-default">Limpar</button>
+						</div>
+					</div>
+				</h:form>
+				
+			</div>
+		</div>
+		
+	</ui:define>
+	<ui:define name="footer">
+
+	</ui:define>
+</ui:composition>
+</html>

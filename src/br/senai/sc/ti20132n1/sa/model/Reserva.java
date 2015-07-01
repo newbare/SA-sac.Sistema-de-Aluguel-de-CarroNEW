@@ -2,23 +2,15 @@ package br.senai.sc.ti20132n1.sa.model;
 
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "reserva")
-@NamedQueries({ @NamedQuery(name = "Reserva.findAll", query = "SELECT p FROM Reserva p") })
 public class Reserva {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(unique=true, nullable=false)
+	@GeneratedValue
 	private long id;
 	private String localDeretirada;
 	private String localDevolucao;

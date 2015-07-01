@@ -2,16 +2,20 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html">
 
-		<nav class="navbar navbar">
+	<nav class="navbar navbar">
 		<h:outputScript library="js" name="menu.js" />
-			<div id="cssmenu">
-				<ul>
-					<li><h:link outcome="/index" value="Home" /></li>
-					<li><h:link outcome="/quemsomos" value="Quem Somos Nós" /></li>
-					<li><h:link outcome="/contatos" value="Contatos" /></li>
-					<li><h:link outcome="/localizacao" value="Localizacao" /></li>
-				</ul>
-			</div>
-		</nav>	
+		<div id="cssmenu">
+			<ul>
+				<li><a class="navbar-brand" href="#"> <h:graphicImage
+							style="height: 100%;" library="img" name="home.png" />
+				</a></li>
+				<li><h:link outcome="/index" value="Home" /></li>
+				<li><h:link outcome="/quemsomos" value="Quem Somos Nós" /></li>
+				<li><h:link outcome="/contatos" value="Contatos" /></li>
+				<li><h:link outcome="/localizacao" value="Localizacao" /></li>
+			</ul>
+		</div>
+	</nav>
+
 
 </ui:composition>

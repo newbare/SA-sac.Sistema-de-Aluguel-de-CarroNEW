@@ -49,7 +49,7 @@ public class CarroDaoTest {
 		c.setMotor("3.0");
 		c.setQuantportas(4);
 		c.setDirecao("hidraulica");
-		c.setImagen("Imagem.jpg");
+		c.setImagem("Imagem.jpg");
 		c.setPlaca("TED2016");
 		
 		dao.salvar(c);
